@@ -12,6 +12,11 @@ class MenuScene: SuperScene {
     
     override func initUI() {
         // code code code
+        print("hello")
+        let spriteNode = SKSpriteNode(color: SKColor.blackColor(), size: CGSize(width: self.size.width, height: self.size.height / 2 - headerNode.size.height))
+        spriteNode.position = CGPoint(x: 0, y: spriteNode.size.height / 2)
+        spriteNode.zPosition = 1
+        self.addChild(spriteNode)
 
     }
 }
