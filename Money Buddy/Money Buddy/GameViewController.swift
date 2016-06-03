@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addCategory), name: NOTIFICATION_ADD_CATEGORY, object: nil)
         
-        let scene = MenuScene(size: CGSize(width: 768, height: 1024))
+        let scene = BudgetScene(size: CGSize(width: 768, height: 1024))
         let skView = self.view as! SKView
         
         skView.showsFPS = true

@@ -28,3 +28,4 @@ class CategoryNode {
         self.maxExpenses = maxExpenses
     }
 }
+

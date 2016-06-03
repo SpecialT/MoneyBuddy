@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1966FD21D01007F004D75A4 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1966FD11D01007F004D75A4 /* ButtonNode.swift */; };
 		B1D090121CFFCBD000940C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D090111CFFCBD000940C68 /* AppDelegate.swift */; };
 		B1D090181CFFCBD000940C68 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D090171CFFCBD000940C68 /* GameViewController.swift */; };
 		B1D0901B1CFFCBD000940C68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D090191CFFCBD000940C68 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1966FD11D01007F004D75A4 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		B1D0900E1CFFCBD000940C68 /* Money Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D090111CFFCBD000940C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1D090171CFFCBD000940C68 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				B1D090271CFFCC9000940C68 /* Constants.swift */,
 				B1D090291CFFCCB100940C68 /* Scenes */,
 				B1D090321CFFCCF300940C68 /* CategoryNode.swift */,
+				B1966FD11D01007F004D75A4 /* ButtonNode.swift */,
 				B1D090191CFFCBD000940C68 /* Main.storyboard */,
 				B1D0901C1CFFCBD000940C68 /* Assets.xcassets */,
 				B1D0901E1CFFCBD000940C68 /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 				B1D090121CFFCBD000940C68 /* AppDelegate.swift in Sources */,
 				B1D090281CFFCC9000940C68 /* Constants.swift in Sources */,
 				B1D090301CFFCCE900940C68 /* BudgetScene.swift in Sources */,
+				B1966FD21D01007F004D75A4 /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +324,7 @@
 				B1D090261CFFCBD000940C68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
