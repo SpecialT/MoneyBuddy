@@ -31,7 +31,7 @@ class BudgetScene: SuperScene {
         self.addChild(spriteNode)
         
         let sizeze = CGSize(width: 200, height: 200)
-        let button = ButtonNode(defaultImage: "wow", activeImage: "waddup", size: sizeze, buttonAction: introduceYourself)
+        let button = STButton(defaultImage: "wow", activeImage: "waddup", size: sizeze, buttonAction: introduceYourself)
         button.position.y = -150
         self.addChild(button)
     }
