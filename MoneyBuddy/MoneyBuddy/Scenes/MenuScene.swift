@@ -17,6 +17,6 @@ class MenuScene: SuperScene {
         spriteNode.position = CGPoint(x: 0, y: spriteNode.size.height / 2)
         spriteNode.zPosition = 1
         self.addChild(spriteNode)
-
     }
+    
 }
