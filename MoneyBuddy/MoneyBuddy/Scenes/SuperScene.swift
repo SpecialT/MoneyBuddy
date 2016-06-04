@@ -37,4 +37,12 @@ class SuperScene: SKScene {
     func initUI() {
         print("Must override initUI")
     }
+    
+    // STATIC
+    
+    static func presentScene(scene: SKScene, fromScene prevScene: SKScene) {
+        scene.size = CGSizeMake(768,1024)
+        scene.scaleMode = .AspectFill
+        prevScene.view?.presentScene(scene, transition: SKTransition.crossFadeWithDuration(0.5))
+    }
 }
