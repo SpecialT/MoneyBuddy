@@ -31,11 +31,23 @@ class SuperScene: SKScene {
         headerNode.zPosition = Z_HEADER
         self.addChild(headerNode)
         
+        let homeButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(60, 60), buttonAction: touchHomeButton)
+        homeButton.position = CGPointMake(-220, -20)
+        headerNode.addChild(homeButton)
+        
+        
         self.initUI()
     }
     
     func initUI() {
         print("Must override initUI")
+    }
+    
+    
+    func touchHomeButton () {
+        
+        SuperScene.presentScene(MenuScene(), fromScene: self)
+        
     }
     
     // STATIC
@@ -45,4 +57,5 @@ class SuperScene: SKScene {
         scene.scaleMode = .AspectFill
         prevScene.view?.presentScene(scene, transition: SKTransition.crossFadeWithDuration(0.5))
     }
+   
 }

@@ -42,4 +42,7 @@ class MenuScene: SuperScene {
 
     }
     
+    override func touchHomeButton() {
+        
+    }
 }
