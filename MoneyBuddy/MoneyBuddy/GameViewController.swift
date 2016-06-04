@@ -13,10 +13,10 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addCategory), name: NOTIFICATION_ADD_CATEGORY, object: nil)
         
-        let scene = BudgetScene(size: CGSize(width: 768, height: 1024))
+        addObservers()
+        
+        let scene = MenuScene(size: CGSize(width: 768, height: 1024))
         let skView = self.view as! SKView
         
         skView.showsFPS = true
@@ -27,6 +27,10 @@ class GameViewController: UIViewController {
         scene.scaleMode = .AspectFill
         
         skView.presentScene(scene)
+    }
+    
+    func addObservers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addCategory), name: NOTIFICATION_ADD_CATEGORY, object: nil)
     }
     
     func addCategory(notification: NSNotification) {
