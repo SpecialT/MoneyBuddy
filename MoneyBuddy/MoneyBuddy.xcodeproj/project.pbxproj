@@ -53,15 +53,14 @@
 		2CC3E5561D03436A0009C295 /* MoneyBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				2CC3E5721D0343910009C295 /* AppDelegate.swift */,
 				2CC3E5571D03436A0009C295 /* Assets.xcassets */,
-				2CC3E5581D03436A0009C295 /* LaunchScreen.storyboard */,
-				2CC3E55A1D03436A0009C295 /* Main.storyboard */,
+				2CC3E5721D0343910009C295 /* AppDelegate.swift */,
+				2CC3E55F1D03436A0009C295 /* GameViewController.swift */,
+				2CC3E55E1D03436A0009C295 /* Constants.swift */,
+				2CC3E5761D0344E30009C295 /* Entities */,
 				2CC3E5611D03436A0009C295 /* Scenes */,
 				2CC3E5741D0343A60009C295 /* STUtils */,
-				2CC3E55D1D03436A0009C295 /* CategoryNode.swift */,
-				2CC3E55E1D03436A0009C295 /* Constants.swift */,
-				2CC3E55F1D03436A0009C295 /* GameViewController.swift */,
+				2CC3E5751D0344B50009C295 /* Storyboards */,
 				2CC3E5601D03436A0009C295 /* Info.plist */,
 			);
 			path = MoneyBuddy;
@@ -84,6 +83,23 @@
 				2CC3E55C1D03436A0009C295 /* STButton.swift */,
 			);
 			name = STUtils;
+			sourceTree = "<group>";
+		};
+		2CC3E5751D0344B50009C295 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2CC3E5581D03436A0009C295 /* LaunchScreen.storyboard */,
+				2CC3E55A1D03436A0009C295 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		2CC3E5761D0344E30009C295 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2CC3E55D1D03436A0009C295 /* CategoryNode.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		B1D090051CFFCBD000940C68 = {
