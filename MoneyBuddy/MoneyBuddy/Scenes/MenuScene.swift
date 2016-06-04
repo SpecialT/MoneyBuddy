@@ -17,7 +17,7 @@ class MenuScene: SuperScene {
         spriteNode.position = CGPoint(x: 0, y: spriteNode.size.height / 2)
         spriteNode.zPosition = 1
         self.addChild(spriteNode)
-        
+
         let manageButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(120, 120), buttonAction: touchManageButton)
         manageButton.position = CGPointMake(0, 250)
         self.addChild(manageButton)
@@ -39,6 +39,7 @@ class MenuScene: SuperScene {
         
         SuperScene.presentScene(MonthlyScene(), fromScene: self)
         
+
     }
     
 }
