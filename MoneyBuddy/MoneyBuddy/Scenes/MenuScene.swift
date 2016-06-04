@@ -12,7 +12,7 @@ class MenuScene: SuperScene {
     
     override func initUI() {
         // code code code
-        print("hello")
+        
         let spriteNode = SKSpriteNode(color: SKColor.blackColor(), size: CGSize(width: self.size.width, height: self.size.height / 2 - headerNode.size.height))
         spriteNode.position = CGPoint(x: 0, y: spriteNode.size.height / 2)
         spriteNode.zPosition = 1
@@ -26,7 +26,10 @@ class MenuScene: SuperScene {
         transactionButton.position = CGPointMake(0, -250)
         self.addChild(transactionButton)
         
-        
+//        let button = TSButton(texture: SKTexture(imageNamed: "wow"), activeTexture: nil, action: touchButton)
+        let button = TSButton(imageName: "wow", activeImageName: nil, action: touchButton)
+        button.zPosition = 1000
+        self.addChild(button)
     }
     
     func touchManageButton() {
@@ -38,11 +41,14 @@ class MenuScene: SuperScene {
     func touchTransactionButton() {
         
         SuperScene.presentScene(MonthlyScene(), fromScene: self)
-        
 
     }
     
     override func touchHomeButton() {
         
     }
-}
+
+    func touchButton(info: [String : AnyObject]?) {
+        
+    }
+
