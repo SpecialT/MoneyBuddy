@@ -18,7 +18,27 @@ class MenuScene: SuperScene {
         spriteNode.zPosition = 1
         self.addChild(spriteNode)
         
-//        SuperScene.presentScene(BudgetScene(), fromScene: self)
+        let manageButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(120, 120), buttonAction: touchManageButton)
+        manageButton.position = CGPointMake(0, 250)
+        self.addChild(manageButton)
+        
+        let transactionButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(120, 120), buttonAction: touchTransactionButton)
+        transactionButton.position = CGPointMake(0, -250)
+        self.addChild(transactionButton)
+        
+        
+    }
+    
+    func touchManageButton() {
+        
+        SuperScene.presentScene(BudgetScene(), fromScene: self)
+        
+    }
+    
+    func touchTransactionButton() {
+        
+        SuperScene.presentScene(MonthlyScene(), fromScene: self)
+        
     }
     
 }
