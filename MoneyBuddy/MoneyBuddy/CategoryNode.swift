@@ -50,12 +50,12 @@ class CategoryNode: SKSpriteNode {
         nameLabel.verticalAlignmentMode = .Baseline
         self.addChild(nameLabel)
         
-        let addTransactionButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(120, 120), buttonAction: touchAddTransactionButton )
+        let addTransactionButton = STButton(imageName: "wow", activeImageName: "waddup", action: touchAddTransactionButton )
         addTransactionButton.position = CGPointMake(self.size.width / 2 - 50, 0)
         self.addChild(addTransactionButton)
     }
     
-    func touchAddTransactionButton() {
+    func touchAddTransactionButton(info: [String : AnyObject]?) {
     
     }
 }
