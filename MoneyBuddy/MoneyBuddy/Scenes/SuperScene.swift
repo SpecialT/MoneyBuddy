@@ -31,7 +31,7 @@ class SuperScene: SKScene {
         headerNode.zPosition = Z_HEADER
         self.addChild(headerNode)
         
-        let homeButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(60, 60), buttonAction: touchHomeButton)
+        let homeButton = STButton(imageName: "wow", activeImageName: "waddup", action: touchHomeButton)
         homeButton.position = CGPointMake(-220, -20)
         headerNode.addChild(homeButton)
         
@@ -44,7 +44,7 @@ class SuperScene: SKScene {
     }
     
     
-    func touchHomeButton () {
+    func touchHomeButton(info: [String : AnyObject]?) {
         
         SuperScene.presentScene(MenuScene(), fromScene: self)
         

@@ -1,59 +1,135 @@
 //
-//  ButtonNode.swift
-//  Money Buddy
+//  TSButton.swift
+//  MoneyBuddy
 //
-//  Created by Tyler Veseth on 6/2/16.
+//  Created by Todd Sutter on 6/4/16.
 //  Copyright © 2016 SpecialT. All rights reserved.
 //
 
 import Foundation
 import SpriteKit
 
-class STButton: SKNode {
-    private var defaultButton: SKSpriteNode
-    private var activeButton: SKSpriteNode
-    private var action: () -> Void
+class STButton : SKSpriteNode {
     
-    init(defaultImage: String, activeImage: String, size: CGSize, buttonAction: () -> Void) {
-        defaultButton = SKSpriteNode(imageNamed: defaultImage)
-        activeButton = SKSpriteNode(imageNamed: activeImage)
-        defaultButton.zPosition = 2
-        activeButton.zPosition = 1
-        defaultButton.size = size
-        activeButton.size = size
-        activeButton.hidden = true
-        action = buttonAction
+    private var defaultTexture: SKTexture?
+    private var activeTexture: SKTexture?
+    
+    private var action: (([String : AnyObject]?) -> (Void))?
+    private var arguments: [String : AnyObject]?
+    
+    private let pointContainer = SKSpriteNode()
+    
+    override var size: CGSize {
+        didSet {
+            changedSize()
+        }
+    }
+    
+    override var anchorPoint: CGPoint {
+        didSet {
+            changedAnchorPoint()
+        }
+    }
+    
+    // INITIALIZERS
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
+    
+    init(texture: SKTexture?, activeTexture: SKTexture?, action: (([String : AnyObject]?) -> (Void))?) {
+        self.action = action
+        self.defaultTexture = texture
+        self.activeTexture = activeTexture
         
-        super.init()
+        super.init(texture: texture, color: SKColor.clearColor(), size: texture?.size() ?? CGSizeZero)
         
         userInteractionEnabled = true
-        self.addChild(activeButton)
-        self.addChild(defaultButton)
+        
+        pointContainer.zPosition = 100
+        self.addChild(pointContainer)
     }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    convenience init(imageName: String?, activeImageName: String?, action: (([String : AnyObject]?) -> (Void))?) {
+        let texture: SKTexture? = imageName != nil ? SKTexture(imageNamed: imageName!) : nil
+        let activeTexture: SKTexture? = activeImageName != nil ? SKTexture(imageNamed: activeImageName!) : nil
+        self.init(texture: texture, activeTexture: activeTexture, action: action)
     }
-
+    
+    // EFFECTS
+    
+    func applyActiveState() {
+        if activeTexture != nil {
+            self.texture = activeTexture
+        } else {
+            self.alpha = 0.5
+        }
+    }
+    
+    func applyDefaultState() {
+        if activeTexture != nil {
+            self.texture = defaultTexture
+        } else {
+            self.alpha = 1
+        }
+    }
+    
+    func deactivate() {
+        self.userInteractionEnabled = false
+        self.alpha = 0.5
+    }
+    
+    func reactivate() {
+        self.userInteractionEnabled = true
+        self.alpha = 1
+    }
+    
+    // SETTERS
+    
+    func setAction(action: (([String : AnyObject]?) -> (Void))?) {
+        self.action = action
+    }
+    
+    func setArguments(arguments: [String : AnyObject]?) {
+        self.arguments = arguments
+    }
+    
+    private func changedSize() {
+        pointContainer.size = self.size
+    }
+    
+    private func changedAnchorPoint() {
+        pointContainer.anchorPoint = self.anchorPoint
+    }
+    
+    // TOUCHES
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        defaultButton.hidden = true
-        activeButton.hidden = false
+        applyActiveState()
     }
+    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        for touch: AnyObject in touches {
-            let location: CGPoint = touch.locationInNode(self)
+        if let touch = touches.first {
+            let location = touch.locationInNode(self)
             
-            if defaultButton.containsPoint(location) {
-                activeButton.hidden = false
-                defaultButton.hidden = true
+            if pointContainer.containsPoint(location) {
+                applyActiveState()
             } else {
-                activeButton.hidden = true
-                defaultButton.hidden = false
+                applyDefaultState()
             }
         }
     }
+    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        defaultButton.hidden = false
-        activeButton.hidden = true
-        action()
+        if let touch = touches.first {
+            let location = touch.locationInNode(self)
+            
+            if pointContainer.containsPoint(location) {
+                self.action?(arguments)
+            }
+        }
+        
+        applyDefaultState()
     }
+    
 }

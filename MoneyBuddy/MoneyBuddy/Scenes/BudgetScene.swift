@@ -10,7 +10,7 @@ import SpriteKit
 
 class BudgetScene: SuperScene {
     
-    var money = 0.0
+    var money: CGFloat = 0
     var total = SKLabelNode()
     
     override func initUI() {
@@ -18,7 +18,7 @@ class BudgetScene: SuperScene {
         
         self.addCategory("funky", maxExp: 200)
         
-        total = SKLabelNode(text: "$0.00")
+        total.text = "$0.00"
         total.position = CGPoint(x: 0, y: 200)
         total.fontColor = SKColor.whiteColor()
         total.zPosition = 2
@@ -30,16 +30,17 @@ class BudgetScene: SuperScene {
         spriteNode.zPosition = 1
         self.addChild(spriteNode)
         
-        let sizeze = CGSize(width: 200, height: 200)
-        let button = STButton(defaultImage: "wow", activeImage: "waddup", size: sizeze, buttonAction: introduceYourself)
-        
+        let button = STButton(imageName: "wow", activeImageName: "waddup", action: introduceYourself)
+        button.setArguments(["amount": 1])
         button.position.y = -150
         self.addChild(button)
     }
     
-    func introduceYourself() {
-        money += 0.1
-        total.text = "$\(money)0"
+    func introduceYourself(info: [String : AnyObject]?) {
+        if let amount = info?["amount"] as? CGFloat {
+            money += amount
+            total.text = String(format: "$%.2f", money)
+        }
     }
     
     func addCategory(name: String, maxExp: CGFloat) {

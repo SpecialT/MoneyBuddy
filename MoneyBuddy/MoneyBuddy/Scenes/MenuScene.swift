@@ -18,38 +18,35 @@ class MenuScene: SuperScene {
         spriteNode.zPosition = 1
         self.addChild(spriteNode)
 
-        let manageButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(120, 120), buttonAction: touchManageButton)
+        let manageButton = STButton(imageName: "wow", activeImageName: "waddup", action: touchManageButton)
+        manageButton.zPosition = 1
         manageButton.position = CGPointMake(0, 250)
         self.addChild(manageButton)
         
-        let transactionButton = STButton(defaultImage: "wow", activeImage: "waddup", size: CGSizeMake(120, 120), buttonAction: touchTransactionButton)
+        let transactionButton = STButton(imageName: "wow", activeImageName: "waddup", action: touchTransactionButton)
+        transactionButton.zPosition = 1
         transactionButton.position = CGPointMake(0, -250)
         self.addChild(transactionButton)
-        
-//        let button = TSButton(texture: SKTexture(imageNamed: "wow"), activeTexture: nil, action: touchButton)
-        let button = TSButton(imageName: "wow", activeImageName: nil, action: touchButton)
-        button.zPosition = 1000
-        self.addChild(button)
     }
     
-    func touchManageButton() {
+    func touchManageButton(info: [String : AnyObject]?) {
         
         SuperScene.presentScene(BudgetScene(), fromScene: self)
         
     }
     
-    func touchTransactionButton() {
+    func touchTransactionButton(info: [String : AnyObject]?) {
         
         SuperScene.presentScene(MonthlyScene(), fromScene: self)
 
     }
     
-    override func touchHomeButton() {
-        
+    override func touchHomeButton(info: [String : AnyObject]?) {
+        // Do Nothing
     }
 
     func touchButton(info: [String : AnyObject]?) {
-        
+        print(info)
     }
 
 }
