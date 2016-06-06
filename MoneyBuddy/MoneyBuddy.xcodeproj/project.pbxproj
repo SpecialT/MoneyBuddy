@@ -13,9 +13,9 @@
 		2CC3E56A1D03436A0009C295 /* CategoryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E55D1D03436A0009C295 /* CategoryNode.swift */; };
 		2CC3E56B1D03436A0009C295 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E55E1D03436A0009C295 /* Constants.swift */; };
 		2CC3E56C1D03436A0009C295 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E55F1D03436A0009C295 /* GameViewController.swift */; };
-		2CC3E56E1D03436A0009C295 /* BudgetScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E5621D03436A0009C295 /* BudgetScene.swift */; };
+		2CC3E56E1D03436A0009C295 /* ManageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E5621D03436A0009C295 /* ManageScene.swift */; };
 		2CC3E56F1D03436A0009C295 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E5631D03436A0009C295 /* MenuScene.swift */; };
-		2CC3E5701D03436A0009C295 /* MonthlyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E5641D03436A0009C295 /* MonthlyScene.swift */; };
+		2CC3E5701D03436A0009C295 /* TransactionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E5641D03436A0009C295 /* TransactionScene.swift */; };
 		2CC3E5711D03436A0009C295 /* SuperScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E5651D03436A0009C295 /* SuperScene.swift */; };
 		2CC3E5731D0343910009C295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3E5721D0343910009C295 /* AppDelegate.swift */; };
 		2CC3E5781D034ADD0009C295 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3E5601D03436A0009C295 /* Info.plist */; };
@@ -30,9 +30,9 @@
 		2CC3E55E1D03436A0009C295 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2CC3E55F1D03436A0009C295 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2CC3E5601D03436A0009C295 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CC3E5621D03436A0009C295 /* BudgetScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetScene.swift; sourceTree = "<group>"; };
+		2CC3E5621D03436A0009C295 /* ManageScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageScene.swift; sourceTree = "<group>"; };
 		2CC3E5631D03436A0009C295 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
-		2CC3E5641D03436A0009C295 /* MonthlyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyScene.swift; sourceTree = "<group>"; };
+		2CC3E5641D03436A0009C295 /* TransactionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionScene.swift; sourceTree = "<group>"; };
 		2CC3E5651D03436A0009C295 /* SuperScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperScene.swift; sourceTree = "<group>"; };
 		2CC3E5721D0343910009C295 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CC3E5791D035D0B0009C295 /* STButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STButton.swift; sourceTree = "<group>"; };
@@ -71,8 +71,8 @@
 			children = (
 				2CC3E5651D03436A0009C295 /* SuperScene.swift */,
 				2CC3E5631D03436A0009C295 /* MenuScene.swift */,
-				2CC3E5621D03436A0009C295 /* BudgetScene.swift */,
-				2CC3E5641D03436A0009C295 /* MonthlyScene.swift */,
+				2CC3E5621D03436A0009C295 /* ManageScene.swift */,
+				2CC3E5641D03436A0009C295 /* TransactionScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -193,11 +193,11 @@
 				2CC3E5711D03436A0009C295 /* SuperScene.swift in Sources */,
 				2CC3E56C1D03436A0009C295 /* GameViewController.swift in Sources */,
 				2CC3E5731D0343910009C295 /* AppDelegate.swift in Sources */,
-				2CC3E5701D03436A0009C295 /* MonthlyScene.swift in Sources */,
+				2CC3E5701D03436A0009C295 /* TransactionScene.swift in Sources */,
 				2CC3E56A1D03436A0009C295 /* CategoryNode.swift in Sources */,
 				2CC3E57A1D035D0B0009C295 /* STButton.swift in Sources */,
 				2CC3E56F1D03436A0009C295 /* MenuScene.swift in Sources */,
-				2CC3E56E1D03436A0009C295 /* BudgetScene.swift in Sources */,
+				2CC3E56E1D03436A0009C295 /* ManageScene.swift in Sources */,
 				2CC3E56B1D03436A0009C295 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,5 +13,9 @@ class MonthlyScene: SuperScene {
     override func initUI() {
         // code code code
         
+        let groceryNode = CategoryNode(name: "Groceries", maxExpenses: 200)
+        groceryNode.zPosition = 1
+        self.addChild(groceryNode)
+        
     }
 }
